@@ -2,6 +2,7 @@ require('dotenv').config()
 require('express-async-errors')
 
 const express = require('express')
+const morgan = require('morgan')
 const errorHandlerMiddleware = require('./middleware/error-handler')
 const notFound = require('./middleware/not-found')
 
@@ -10,7 +11,7 @@ const connectDB = require('./db/connect')
 const productsRouter = require('./routes/products')
 
 app.use(express.json())
-
+app.use(morgan('dev'))
 app.get('/', (req, res) => {
   res.send('<h1>welcome home</h1><a href="/api/v1/products">products</a>')
 })
