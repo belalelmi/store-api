@@ -11,7 +11,7 @@ const productSchema = new mongoose.Schema({
   },
   featured: {
     type: Boolean,
-    default: fase,
+    default: false,
   },
   rating: {
     type: Number,
@@ -24,7 +24,7 @@ const productSchema = new mongoose.Schema({
   company: {
     type: String,
     enum: {
-      values: ['ikea', 'liddy', 'caressa', 'macros'],
+      values: ['ikea', 'liddy', 'caressa', 'marcos'],
       message: '{VALUE} is not supported',
     },
   },
